@@ -1,0 +1,873 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SGPProject SchemaVersion="4.15.4200.29150" ToolId="E06D7E97E05C4BFA9D1D5AA13F8E3DA0" ToolVersion="4.2.4200.29150">
+  <Project id="1" Guid="{5c2bfb2d-936a-4885-a530-5a5dfcd0b4ba}">
+    <Properties id="2">
+      <Property Name="OutputType" Value="Executable" />
+    </Properties>
+    <Configuration id="3">
+      <Property Name="Name" Value="Debug" />
+      <Property Name="DefineConstants" Value="DEBUG;TRACE" />
+    </Configuration>
+    <Configuration id="4">
+      <Property Name="DebugSymbols" Value="False" />
+      <Property Name="Optimize" Value="True" />
+      <Property Name="Name" Value="Release" />
+      <Property Name="DefineConstants" Value="TRACE" />
+    </Configuration>
+    <ProjectItem id="5">
+      <Properties id="6">
+        <Property Name="BuildAction" Value="Compile" />
+      </Properties>
+      <RootNamespace id="7">
+        <Namespace id="8" Name="BaltieProject">
+          <ConsoleClass id="9" Template="Console Application" PlacementName="RELEASE" Inheritance="Normal" ClassType="Class" Name="BaltieConsole" Access="Public" IsHiding="false">
+            <IconMethodHeader id="10" />
+            <BaseType id="11" Value="" />
+            <Constructor id="12" SuperCall="None" Access="Public">
+              <Attribute id="13">
+                <Type id="14" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="15" />
+              </Attribute>
+              <Parameters id="16" />
+              <Text id="17"><![CDATA[
+InitializeInstance();          
+MainThread();
+]]></Text>
+            </Constructor>
+            <Method id="18" Name="Main" Linkage="Static" Scope="Class" Access="Public">
+              <Attribute id="19">
+                <Type id="20" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="21" />
+              </Attribute>
+              <Type id="22" Value="System.Void" />
+              <Parameters id="23" />
+              <Implements id="24" Value="" />
+              <Text id="25"><![CDATA[
+if(System.Diagnostics.Debugger.IsAttached)
+  new BaltieConsole();
+else {  
+  try {
+    new BaltieConsole();
+  }
+  catch(System.Threading.ThreadAbortException) {}
+  catch(SGP.XUtility.XThreadAbortException) {}    
+  catch(Exception e) {
+    Console.WriteLine(e.ToString());
+    SGP.XUtility.XConsoleUtility.WaitForKey();
+  }
+}
+]]></Text>
+            </Method>
+            <Method id="26" Name="InitializeInstance" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="27">
+                <Type id="28" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="29" />
+              </Attribute>
+              <Type id="30" Value="System.Void" />
+              <Parameters id="31" />
+              <Implements id="32" Value="" />
+              <GeneratedBody id="33" />
+            </Method>
+            <IconMethod id="34" Name="MainThread" HeaderLocked="true" Linkage="Static" Scope="Instance" Access="Public">
+              <IconMethodHeader id="35">
+                <MethodHeader />
+                <Comment Text="---------- Začátek programu ---------" />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="39" Value="System.Void" />
+              <Implements id="40" Value="" />
+              <IconCode id="41">
+                <Indent />
+                <XConsoleUtilityConsoleTitle />
+                <Equals />
+                <Literal LiteralType="String" Text="Matematické výpočty" ImplicitType="Integer" />
+                <EOL />
+                <EOL />
+                <Indent />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Sčítaní=1  " ImplicitType="String" />
+                <OpSymbol OpSymbol="Plus" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Literal LiteralType="String" Text="Odčítaní=2  " ImplicitType="Integer" />
+                <OpSymbol OpSymbol="Plus" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Literal LiteralType="String" Text="Násobení=3  " ImplicitType="Integer" />
+                <OpSymbol OpSymbol="Plus" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Literal LiteralType="String" Text="Dělení=4  " ImplicitType="String" />
+                <OpSymbol OpSymbol="Plus" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Literal LiteralType="String" Text="Mocnina=5  " ImplicitType="Integer" />
+                <OpSymbol OpSymbol="Plus" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Literal LiteralType="String" Text="Odmocnina=6  " ImplicitType="Integer" />
+                <OpSymbol OpSymbol="Plus" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Literal LiteralType="String" Text="Výpis násobilky=7  " ImplicitType="String" />
+                <OpSymbol OpSymbol="Plus" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Literal LiteralType="String" Text="Faktoriál=8  " ImplicitType="Integer" />
+                <OpSymbol OpSymbol="Plus" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Literal LiteralType="String" Text="Geometrické výpočty=9" ImplicitType="Integer" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Variable Name="choice" Type="int" />
+                <Equals />
+                <ConvertToInt32 />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="choice" Type="int" />
+                <OpSymbol OpSymbol="Equality" />
+                <Literal LiteralType="Integer" Text="1" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <MethodCall Name="scitani" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="choice" Type="int" />
+                <OpSymbol OpSymbol="Equality" />
+                <Literal LiteralType="Integer" Text="2" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <MethodCall Name="odcitani" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="choice" Type="int" />
+                <OpSymbol OpSymbol="Equality" />
+                <Literal LiteralType="Integer" Text="3" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <MethodCall Name="nasobeni" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="choice" Type="int" />
+                <OpSymbol OpSymbol="Equality" />
+                <Literal LiteralType="Integer" Text="4" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <MethodCall Name="deleni" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="choice" Type="int" />
+                <OpSymbol OpSymbol="Equality" />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <MethodCall Name="mocnina" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="choice" Type="int" />
+                <OpSymbol OpSymbol="Equality" />
+                <Literal LiteralType="Integer" Text="6" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <MethodCall Name="odmocnina" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="choice" Type="int" />
+                <OpSymbol OpSymbol="Equality" />
+                <Literal LiteralType="Integer" Text="7" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <MethodCall Name="nasobilka" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="choice" Type="int" />
+                <OpSymbol OpSymbol="Equality" />
+                <Literal LiteralType="Integer" Text="8" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <MethodCall Name="faktorial" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Comment Text="------------------ Metody ------------------" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="99" Name="scitani" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="100">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="103" Value="void" />
+              <Implements id="104" Value="" />
+              <IconCode id="105">
+                <Indent />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej prvni cislo:" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="A" Type="int" />
+                <Equals />
+                <ConvertToInt32 />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej druhe cislo:" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="B" Type="int" />
+                <Equals />
+                <ConvertToInt32 />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="Soucet" Type="int" />
+                <Equals />
+                <VarCall Name="A" Type="int" />
+                <OpSymbol OpSymbol="Plus" />
+                <VarCall Name="B" Type="int" />
+                <Indent />
+                <EOL />
+                <Indent />
+                <Indent />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Soucet je:" ImplicitType="String" />
+                <OpSymbol OpSymbol="Plus" />
+                <VarCall Name="Soucet" Type="int" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Wait Text="" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="156" Name="odcitani" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="157">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="160" Value="void" />
+              <Implements id="161" Value="" />
+              <IconCode id="162">
+                <Indent />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej prvni cislo:" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="A" Type="float" />
+                <Equals />
+                <ConvertToSingle />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej druhe cislo:" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="B" Type="float" />
+                <Equals />
+                <ConvertToSingle />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="rozdil" Type="float" />
+                <Equals />
+                <VarCall Name="A" Type="float" />
+                <OpSymbol OpSymbol="Minus" />
+                <VarCall Name="B" Type="float" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Vysledek je:" ImplicitType="String" />
+                <OpSymbol OpSymbol="Plus" />
+                <VarCall Name="rozdil" Type="float" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Wait Text="" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="212" Name="nasobeni" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="213">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="216" Value="void" />
+              <Implements id="217" Value="" />
+              <IconCode id="218">
+                <Indent />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej prvni cislo:" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="A" Type="int" />
+                <Equals />
+                <ConvertToInt32 />
+                <ConsoleReadLine />
+                <Indent />
+                <EOL />
+                <Indent />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej druhe cislo:" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="B" Type="int" />
+                <Equals />
+                <ConvertToInt32 />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="Soucin" Type="int" />
+                <Equals />
+                <VarCall Name="A" Type="int" />
+                <OpSymbol OpSymbol="Multiply" />
+                <VarCall Name="B" Type="int" />
+                <Indent />
+                <EOL />
+                <Indent />
+                <Indent />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Soucin je:" ImplicitType="String" />
+                <OpSymbol OpSymbol="Plus" />
+                <VarCall Name="Soucin" Type="int" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Wait Text="" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="269" Name="nasobilka" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="270">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="273" Value="void" />
+              <Implements id="274" Value="" />
+              <IconCode id="275">
+                <Indent />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej číslo, jehož násobilku chceš vypsat:" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="entered_number" Type="int" />
+                <Equals />
+                <ConvertToInt32 />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="soucin" Type="int" />
+                <Equals />
+                <Literal LiteralType="Integer" Text="1" ImplicitType="Integer" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <For />
+                <RoundBracket Direction="Start" />
+                <Variable Name="i" Type="int" />
+                <Equals />
+                <Literal LiteralType="Integer" Text="1" ImplicitType="Integer" />
+                <Semicomma />
+                <VarCall Name="i" Type="int" />
+                <OpSymbol OpSymbol="LessThanOrEqual" />
+                <Literal LiteralType="Integer" Text="10" ImplicitType="Integer" />
+                <Semicomma />
+                <VarCall Name="i" Type="int" />
+                <OpSymbol OpSymbol="Increment" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <VarCall Name="soucin" Type="int" />
+                <Equals />
+                <VarCall Name="i" Type="int" />
+                <OpSymbol OpSymbol="Multiply" />
+                <VarCall Name="entered_number" Type="int" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="i" Type="int" />
+                <OpSymbol OpSymbol="Plus" />
+                <Literal LiteralType="String" Text="x" ImplicitType="Integer" />
+                <OpSymbol OpSymbol="Plus" />
+                <VarCall Name="entered_number" Type="int" />
+                <OpSymbol OpSymbol="Plus" />
+                <Literal LiteralType="String" Text="=" ImplicitType="Integer" />
+                <OpSymbol OpSymbol="Plus" />
+                <VarCall Name="soucin" Type="int" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Wait Text="" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="393" Name="faktorial" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="394">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="397" Value="void" />
+              <Implements id="398" Value="" />
+              <IconCode id="399">
+                <Indent />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej číslo. jehož faktoríál chceš spočítat:" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="a" Type="int" />
+                <Equals />
+                <ConvertToInt32 />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="faktorial" Type="int" />
+                <Equals />
+                <Literal LiteralType="Integer" Text="1" ImplicitType="Integer" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="a" Type="int" />
+                <OpSymbol OpSymbol="GreaterThan" />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <For />
+                <RoundBracket Direction="Start" />
+                <Variable Name="i" Type="int" />
+                <Equals />
+                <Literal LiteralType="Integer" Text="1" ImplicitType="Integer" />
+                <Semicomma />
+                <VarCall Name="i" Type="int" />
+                <OpSymbol OpSymbol="LessThanOrEqual" />
+                <VarCall Name="a" Type="int" />
+                <Semicomma />
+                <VarCall Name="i" Type="int" />
+                <OpSymbol OpSymbol="Increment" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <VarCall Name="faktorial" Type="int" />
+                <Equals />
+                <VarCall Name="faktorial" Type="int" />
+                <OpSymbol OpSymbol="Multiply" />
+                <VarCall Name="i" Type="int" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Else />
+                <Brace Direction="Start" />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Faktoriál je " ImplicitType="String" />
+                <OpSymbol OpSymbol="Plus" />
+                <VarCall Name="faktorial" Type="int" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Indent />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Faktoriál je " ImplicitType="String" />
+                <OpSymbol OpSymbol="Plus" />
+                <VarCall Name="faktorial" Type="int" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Wait Text="" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="530" Name="deleni" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="531">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="534" Value="void" />
+              <Implements id="535" Value="" />
+              <IconCode id="536">
+                <Indent />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej první číslo:" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="a" Type="float" />
+                <Equals />
+                <ConvertToSingle />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej druhé číslo:" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="b" Type="float" />
+                <Equals />
+                <ConvertToSingle />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="result" Type="float" />
+                <Equals />
+                <Literal LiteralType="Float" Text="0" ImplicitType="Float" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="a" Type="float" />
+                <OpSymbol OpSymbol="LessThanOrEqual" />
+                <Literal LiteralType="Float" Text="0" ImplicitType="Float" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Nelze dělit!" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Else />
+                <Brace Direction="Start" />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="b" Type="float" />
+                <OpSymbol OpSymbol="LessThanOrEqual" />
+                <Literal LiteralType="Float" Text="0" ImplicitType="Float" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Nelze dělit!" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Else />
+                <Brace Direction="Start" />
+                <VarCall Name="result" Type="float" />
+                <Equals />
+                <VarCall Name="a" Type="float" />
+                <OpSymbol OpSymbol="Division" />
+                <VarCall Name="b" Type="float" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Indent />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Výsledek je " ImplicitType="String" />
+                <OpSymbol OpSymbol="Plus" />
+                <VarCall Name="result" Type="float" />
+                <OpSymbol OpSymbol="Plus" />
+                <Literal LiteralType="String" Text="." ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Brace Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Wait Text="" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="659" Name="mocnina" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="660">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="663" Value="void" />
+              <Implements id="664" Value="" />
+              <IconCode id="665">
+                <Indent />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej číslo, které chceš umocnit:" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="a" Type="int" />
+                <Equals />
+                <ConvertToInt32 />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="mocnina" Type="int" />
+                <Equals />
+                <VarCall Name="a" Type="int" />
+                <OpSymbol OpSymbol="Multiply" />
+                <VarCall Name="a" Type="int" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Mocnina je " ImplicitType="String" />
+                <OpSymbol OpSymbol="Plus" />
+                <VarCall Name="mocnina" Type="int" />
+                <OpSymbol OpSymbol="Plus" />
+                <Literal LiteralType="String" Text="." ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Wait Text="" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="717" Name="odmocnina" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="718">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="721" Value="void" />
+              <Implements id="722" Value="" />
+              <IconCode id="723">
+                <Indent />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej číslo:" ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Variable Name="number1" Type="float" />
+                <Equals />
+                <ConvertToSingle />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <Indent />
+                <EOL />
+                <Indent />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="number1" Type="float" />
+                <OpSymbol OpSymbol="GreaterThan" />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <Variable Name="odmocnina" Type="double" />
+                <Equals />
+                <Sqrt />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="number1" Type="float" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Round />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="odmocnina" Type="double" />
+                <Comma />
+                <Literal LiteralType="Integer" Text="2" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <OpSymbol OpSymbol="Plus" />
+                <Literal LiteralType="String" Text=" je výsledek." ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Else />
+                <Brace Direction="Start" />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Nelze vypočítat." ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Wait Text="" />
+              </IconCode>
+            </IconMethod>
+            <DirectCode id="43">
+              <Text id="44"><![CDATA[
+
+]]></Text>
+            </DirectCode>
+          </ConsoleClass>
+          <Import id="45" Name="System" />
+          <Import id="46" Name="System.IO" />
+          <Import id="47" Name="System.Collections" />
+          <Import id="48" Name="System.Drawing" />
+          <Import id="49" Name="System.Threading" />
+          <Import id="50" Name="SGP.XUtility" />
+        </Namespace>
+      </RootNamespace>
+    </ProjectItem>
+    <AssemblyReference id="51" Version="2.0.0.0" Name="System" />
+    <AssemblyReference id="52" Version="2.0.0.0" Name="System.Windows.Forms" />
+    <AssemblyReference id="53" Version="2.0.0.0" Name="System.Drawing" />
+    <AssemblyReference id="54" Version="1.3.4200.28995" Name="SGP.XUtility" />
+  </Project>
+  <Satellites />
+</SGPProject>

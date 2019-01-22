@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SGPProject SchemaVersion="4.15.4200.29150" ToolId="E06D7E97E05C4BFA9D1D5AA13F8E3DA0" ToolVersion="4.2.4200.29150">
+  <Project id="1" Guid="{7652dc86-1727-4151-99b7-3d94afa45970}">
+    <Properties id="2" />
+    <Configuration id="3">
+      <Property Name="Name" Value="Debug" />
+      <Property Name="DefineConstants" Value="DEBUG;TRACE" />
+    </Configuration>
+    <Configuration id="4">
+      <Property Name="DebugSymbols" Value="False" />
+      <Property Name="Optimize" Value="True" />
+      <Property Name="Name" Value="Release" />
+      <Property Name="DefineConstants" Value="TRACE" />
+    </Configuration>
+    <ProjectItem id="5">
+      <Properties id="6">
+        <Property Name="BuildAction" Value="Compile" />
+      </Properties>
+      <RootNamespace id="7">
+        <Namespace id="8" Name="BaltieProject">
+          <IconCodeClass id="9" Template="Baltie 3D Application" PlacementName="RELEASE" Inheritance="Normal" ClassType="Class" Name="BaltieProjectForm" Access="Public" IsHiding="false">
+            <Properties id="10" />
+            <Baltie3D id="11" Name="baltie0" />
+            <Baltie3D id="13" Name="baltie1" />
+            <Baltie3D id="14" Name="baltie2" />
+            <Baltie3D id="15" Name="baltie3" />
+            <Baltie3D id="16" Name="baltie4" />
+            <Baltie3D id="17" Name="baltie5" />
+            <Baltie3D id="18" Name="baltie6" />
+            <Baltie3D id="19" Name="baltie7" />
+            <Baltie3D id="20" Name="baltie8" />
+            <Baltie3D id="21" Name="baltie9" />
+            <IconMethodHeader id="22">
+              <BaltieDecl Character="8" CharacterInst="20" />
+              <BaltieDecl Character="5" CharacterInst="17" />
+              <BaltieDecl Character="1" CharacterInst="13" />
+              <BaltieDecl Character="2" CharacterInst="14" />
+              <BaltieDecl CharacterInst="11" />
+              <EOL />
+            </IconMethodHeader>
+            <BaseType id="29" Value="BaltieForm" />
+            <Constructor id="30" SuperCall="None" Access="Public">
+              <Parameters id="31" />
+              <Text id="32"><![CDATA[
+InitializeInstance();
+]]></Text>
+            </Constructor>
+            <Method id="33" Name="Main" Linkage="Static" Scope="Class" Access="Public">
+              <Attribute id="34">
+                <Type id="35" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="36" />
+              </Attribute>
+              <Type id="37" Value="System.Void" />
+              <Parameters id="38" />
+              <Implements id="39" Value="" />
+              <Text id="12"><![CDATA[
+Application.EnableVisualStyles();
+Application.DoEvents();
+Application.Run(new BaltieProjectForm());
+]]></Text>
+            </Method>
+            <Method id="40" Name="Animation" Linkage="Override" Scope="Instance" Access="Protected">
+              <Attribute id="41">
+                <Type id="42" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="43" />
+              </Attribute>
+              <Type id="44" Value="System.Void" />
+              <Parameters id="45">
+                <Parameter id="46" Access="In" Name="thisThread">
+                  <Type id="47" Value="IXThread" />
+                </Parameter>
+              </Parameters>
+              <Implements id="48" Value="" />
+              <Text id="49"><![CDATA[
+this.InitializeBalties();
+foreach(Baltie baltie in this.BaltieSpace.Balties) {
+  baltie.SetPosition(0,0,0);
+  baltie.Direction = 0;
+}
+if(System.Diagnostics.Debugger.IsAttached)
+  MainAnimationThread();
+else {  
+  try {
+    MainAnimationThread();
+  }
+  catch(System.Threading.ThreadAbortException) {}
+  catch(SGP.XUtility.XThreadAbortException) {}    
+  catch(Exception e) {
+    new SGP.XRtlExceptionDialog().ShowDialog(e);
+  }
+}
+XSpace.JoinAnimationThreads();
+Application.Exit();
+]]></Text>
+            </Method>
+            <Method id="50" Name="InitializeInstance" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="51">
+                <Type id="52" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="53" />
+              </Attribute>
+              <Type id="54" Value="System.Void" />
+              <Parameters id="55" />
+              <Implements id="56" Value="" />
+              <GeneratedBody id="57" />
+            </Method>
+            <Method id="58" Name="InitializeBalties" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="59">
+                <Type id="60" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="61" />
+              </Attribute>
+              <Type id="62" Value="System.Void" />
+              <Parameters id="63" />
+              <Implements id="64" Value="" />
+              <GeneratedBody id="65" />
+            </Method>
+            <IconMethod id="66" Name="MainAnimationThread" HeaderLocked="true" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="67">
+                <MethodHeader />
+                <Comment Text="---------- Začátek programu ---------" />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="71" Value="System.Void" />
+              <Implements id="72" Value="" />
+              <IconCode id="73">
+                <Indent />
+                <LittleBaltie Character="8" CharacterInst="20" />
+                <Number Number="Dot" />
+                <Code Text="SetPosition" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <Comma />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <Comma />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <LittleBaltie Character="5" CharacterInst="17" />
+                <Number Number="Dot" />
+                <Code Text="SetPosition" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <Comma />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <Comma />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <LittleBaltie Character="1" CharacterInst="13" />
+                <Number Number="Dot" />
+                <Code Text="SetPosition" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <Comma />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <Comma />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <LittleBaltie Character="2" CharacterInst="14" />
+                <Number Number="Dot" />
+                <Code Text="SetPosition" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <Comma />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <Comma />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <LittleBaltie Character="2" CharacterInst="14" />
+                <Number Number="Dot" />
+                <Code Text="Direction" />
+                <Equals />
+                <Literal LiteralType="Integer" Text="180" ImplicitType="Integer" />
+                <EOL />
+                <Indent />
+                <LittleBaltie Character="8" CharacterInst="20" />
+                <Number Number="Dot" />
+                <Code Text="Direction" />
+                <Equals />
+                <Literal LiteralType="Integer" Text="90" ImplicitType="Integer" />
+                <EOL />
+                <Indent />
+                <LittleBaltie Character="1" CharacterInst="13" />
+                <Number Number="Dot" />
+                <Code Text="Direction" />
+                <Equals />
+                <Literal LiteralType="Integer" Text="-90" ImplicitType="Integer" />
+                <EOL />
+                <Indent />
+                <Show Character="8" CharacterInst="20" />
+                <Show Character="5" CharacterInst="17" />
+                <Show Character="1" CharacterInst="13" />
+                <Show Character="2" CharacterInst="14" />
+                <EOL />
+                <Indent />
+                <Go Extended="true" Character="8" CharacterInst="20" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <LittleBaltie Character="5" CharacterInst="17" />
+                <Number Number="Dot" />
+                <Code Text="Color" />
+                <Equals />
+                <LittleBaltie Character="8" CharacterInst="20" />
+                <Number Number="Dot" />
+                <Code Text="Color" />
+                <EOL />
+                <Indent />
+                <Go Extended="true" Character="5" CharacterInst="17" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <LittleBaltie Character="1" CharacterInst="13" />
+                <Number Number="Dot" />
+                <Code Text="Color" />
+                <Equals />
+                <LittleBaltie Character="8" CharacterInst="20" />
+                <Number Number="Dot" />
+                <Code Text="Color" />
+                <EOL />
+                <Indent />
+                <Go Extended="true" Character="1" CharacterInst="13" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <LittleBaltie Character="2" CharacterInst="14" />
+                <Number Number="Dot" />
+                <Code Text="Color" />
+                <Equals />
+                <LittleBaltie Character="8" CharacterInst="20" />
+                <Number Number="Dot" />
+                <Code Text="Color" />
+                <EOL />
+                <Indent />
+                <Go Extended="true" Character="2" CharacterInst="14" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Wait Text="" />
+              </IconCode>
+            </IconMethod>
+            <DirectCode id="151">
+              <Text id="152"><![CDATA[
+
+]]></Text>
+            </DirectCode>
+          </IconCodeClass>
+          <Import id="153" Name="System" />
+          <Import id="154" Name="System.IO" />
+          <Import id="155" Name="System.Collections" />
+          <Import id="156" Name="System.Drawing" />
+          <Import id="157" Name="System.Threading" />
+          <Import id="158" Name="System.Windows.Forms" />
+          <Import id="159" Name="Microsoft.DirectX" />
+          <Import id="160" Name="Microsoft.DirectX.Direct3D" />
+          <Import id="161" Name="SGP.Baltie" />
+          <Import id="162" Name="SGP.XSpace" />
+          <Import id="163" Name="SGP.XUtility" />
+        </Namespace>
+      </RootNamespace>
+    </ProjectItem>
+    <AssemblyReference id="164" Version="2.0.0.0" Name="System" />
+    <AssemblyReference id="165" Version="2.0.0.0" Name="System.Windows.Forms" />
+    <AssemblyReference id="166" Version="2.0.0.0" Name="System.Drawing" />
+    <AssemblyReference id="167" Version="1.0.2902.0" Name="Microsoft.DirectX" />
+    <AssemblyReference id="168" Version="1.0.2902.0" Name="Microsoft.DirectX.Direct3D" />
+    <AssemblyReference id="169" Version="1.0.2911.0" Name="Microsoft.DirectX.Direct3DX" />
+    <AssemblyReference id="170" Version="1.0.2902.0" Name="Microsoft.DirectX.AudioVideoPlayback" />
+    <AssemblyReference id="171" Version="1.3.4200.28995" Name="SGP.XUtility" />
+    <AssemblyReference id="172" Version="1.3.4200.29049" Name="SGP.DirectX.DirectMusic" />
+    <AssemblyReference id="173" Version="1.3.4200.29081" Name="SGPRTL" />
+  </Project>
+  <Satellites />
+</SGPProject>

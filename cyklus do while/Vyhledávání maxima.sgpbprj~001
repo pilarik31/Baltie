@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SGPProject SchemaVersion="4.15.4200.29150" ToolId="E06D7E97E05C4BFA9D1D5AA13F8E3DA0" ToolVersion="4.2.4200.29150">
+  <Project id="1" Guid="{7522b7b5-bbf6-4509-aa71-08436dd17dcf}">
+    <Properties id="2">
+      <Property Name="OutputType" Value="Executable" />
+    </Properties>
+    <Configuration id="3">
+      <Property Name="Name" Value="Debug" />
+      <Property Name="DefineConstants" Value="DEBUG;TRACE" />
+    </Configuration>
+    <Configuration id="4">
+      <Property Name="DebugSymbols" Value="False" />
+      <Property Name="Optimize" Value="True" />
+      <Property Name="Name" Value="Release" />
+      <Property Name="DefineConstants" Value="TRACE" />
+    </Configuration>
+    <ProjectItem id="5">
+      <Properties id="6">
+        <Property Name="BuildAction" Value="Compile" />
+      </Properties>
+      <RootNamespace id="7">
+        <Namespace id="8" Name="BaltieProject">
+          <ConsoleClass id="9" Template="Console Application" PlacementName="RELEASE" Inheritance="Normal" ClassType="Class" Name="BaltieConsole" Access="Public" IsHiding="false">
+            <IconMethodHeader id="10" />
+            <BaseType id="11" Value="" />
+            <Constructor id="12" SuperCall="None" Access="Public">
+              <Attribute id="13">
+                <Type id="14" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="15" />
+              </Attribute>
+              <Parameters id="16" />
+              <Text id="17"><![CDATA[
+InitializeInstance();          
+MainThread();
+]]></Text>
+            </Constructor>
+            <Method id="18" Name="Main" Linkage="Static" Scope="Class" Access="Public">
+              <Attribute id="19">
+                <Type id="20" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="21" />
+              </Attribute>
+              <Type id="22" Value="System.Void" />
+              <Parameters id="23" />
+              <Implements id="24" Value="" />
+              <Text id="25"><![CDATA[
+if(System.Diagnostics.Debugger.IsAttached)
+  new BaltieConsole();
+else {  
+  try {
+    new BaltieConsole();
+  }
+  catch(System.Threading.ThreadAbortException) {}
+  catch(SGP.XUtility.XThreadAbortException) {}    
+  catch(Exception e) {
+    Console.WriteLine(e.ToString());
+    SGP.XUtility.XConsoleUtility.WaitForKey();
+  }
+}
+]]></Text>
+            </Method>
+            <Method id="26" Name="InitializeInstance" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="27">
+                <Type id="28" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="29" />
+              </Attribute>
+              <Type id="30" Value="System.Void" />
+              <Parameters id="31" />
+              <Implements id="32" Value="" />
+              <GeneratedBody id="33" />
+            </Method>
+            <IconMethod id="34" Name="MainThread" HeaderLocked="true" Linkage="Static" Scope="Instance" Access="Public">
+              <IconMethodHeader id="35">
+                <MethodHeader />
+                <Comment Text="---------- Začátek programu ---------" />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="39" Value="System.Void" />
+              <Implements id="40" Value="" />
+              <IconCode id="41">
+                <Indent />
+                <Variable Name="minVar" Type="int" />
+                <Equals />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <EOL />
+                <Indent />
+                <Variable Name="maxVar" Type="int" />
+                <Equals />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <EOL />
+                <Indent />
+                <Variable Name="masterVar" Type="int" />
+                <Equals />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <EOL />
+                <Indent />
+                <EOL />
+                <Indent />
+                <Do />
+                <EOL />
+                <Indent />
+                <Brace Direction="Start" />
+                <EOL />
+                <Indent />
+                <ConsoleWrite />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Zadej číslo: " ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <VarCall Name="masterVar" Type="int" />
+                <Equals />
+                <ConvertToInt32 />
+                <ConsoleReadLine />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="masterVar" Type="int" />
+                <OpSymbol OpSymbol="Equality" />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <Code Text="goto exit;" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="maxVar" Type="int" />
+                <OpSymbol OpSymbol="LessThan" />
+                <VarCall Name="masterVar" Type="int" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <VarCall Name="maxVar" Type="int" />
+                <Equals />
+                <VarCall Name="masterVar" Type="int" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <If />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="minVar" Type="int" />
+                <OpSymbol OpSymbol="GreaterThan" />
+                <VarCall Name="masterVar" Type="int" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="Start" />
+                <VarCall Name="minVar" Type="int" />
+                <Equals />
+                <VarCall Name="masterVar" Type="int" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <EOL />
+                <Indent />
+                <EOL />
+                <Indent />
+                <EOL />
+                <Indent />
+                <EOL />
+                <Indent />
+                <EOL />
+                <Indent />
+                <EOL />
+                <Indent />
+                <Brace Direction="End" />
+                <While />
+                <RoundBracket Direction="Start" />
+                <VarCall Name="masterVar" Type="int" />
+                <OpSymbol OpSymbol="Inequality" />
+                <Literal LiteralType="Integer" Text="0" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Code Text="exit:;" />
+                <EOL />
+                <Indent />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Nejmenší číslo je: " ImplicitType="String" />
+                <OpSymbol OpSymbol="Plus" />
+                <VarCall Name="minVar" Type="int" />
+                <OpSymbol OpSymbol="Plus" />
+                <Literal LiteralType="String" Text="." ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <ConsoleWriteLine />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="String" Text="Největší číslo je: " ImplicitType="String" />
+                <OpSymbol OpSymbol="Plus" />
+                <VarCall Name="maxVar" Type="int" />
+                <OpSymbol OpSymbol="Plus" />
+                <Literal LiteralType="String" Text="." ImplicitType="String" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <EOL />
+                <Indent />
+                <Wait Text="" />
+              </IconCode>
+            </IconMethod>
+            <DirectCode id="81">
+              <Text id="82"><![CDATA[
+
+]]></Text>
+            </DirectCode>
+          </ConsoleClass>
+          <Import id="83" Name="System" />
+          <Import id="84" Name="System.IO" />
+          <Import id="85" Name="System.Collections" />
+          <Import id="86" Name="System.Drawing" />
+          <Import id="87" Name="System.Threading" />
+          <Import id="88" Name="SGP.XUtility" />
+        </Namespace>
+      </RootNamespace>
+    </ProjectItem>
+    <AssemblyReference id="89" Version="2.0.0.0" Name="System" />
+    <AssemblyReference id="90" Version="2.0.0.0" Name="System.Windows.Forms" />
+    <AssemblyReference id="91" Version="2.0.0.0" Name="System.Drawing" />
+    <AssemblyReference id="92" Version="1.3.4200.28995" Name="SGP.XUtility" />
+  </Project>
+  <Satellites />
+</SGPProject>

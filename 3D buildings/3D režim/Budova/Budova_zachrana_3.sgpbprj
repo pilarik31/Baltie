@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SGPProject SchemaVersion="4.15.4200.29150" ToolId="E06D7E97E05C4BFA9D1D5AA13F8E3DA0" ToolVersion="4.2.4200.29150">
+  <Project id="1" Guid="{68614b79-2d0d-4137-a76d-da27a41a12b4}">
+    <Properties id="2" />
+    <Configuration id="3">
+      <Property Name="Name" Value="Debug" />
+      <Property Name="DefineConstants" Value="DEBUG;TRACE" />
+    </Configuration>
+    <Configuration id="4">
+      <Property Name="DebugSymbols" Value="False" />
+      <Property Name="Optimize" Value="True" />
+      <Property Name="Name" Value="Release" />
+      <Property Name="DefineConstants" Value="TRACE" />
+    </Configuration>
+    <ProjectItem id="5">
+      <Properties id="6">
+        <Property Name="BuildAction" Value="Compile" />
+      </Properties>
+      <RootNamespace id="7">
+        <Namespace id="8" Name="BaltieProject">
+          <IconCodeClass id="9" Template="Baltie 3D Application" PlacementName="RELEASE" Inheritance="Normal" ClassType="Class" Name="BaltieProjectForm" Access="Public" IsHiding="false">
+            <Properties id="10" />
+            <Baltie3D id="11" Name="baltie0" />
+            <Baltie3D id="13" Name="baltie1" />
+            <Baltie3D id="14" Name="baltie2" />
+            <Baltie3D id="15" Name="baltie3" />
+            <Baltie3D id="16" Name="baltie4" />
+            <Baltie3D id="17" Name="baltie5" />
+            <Baltie3D id="18" Name="baltie6" />
+            <Baltie3D id="19" Name="baltie7" />
+            <Baltie3D id="20" Name="baltie8" />
+            <Baltie3D id="21" Name="baltie9" />
+            <IconMethodHeader id="22">
+              <BaltieDecl CharacterInst="11" />
+              <EOL />
+            </IconMethodHeader>
+            <BaseType id="25" Value="BaltieForm" />
+            <Constructor id="26" SuperCall="None" Access="Public">
+              <Parameters id="27" />
+              <Text id="28"><![CDATA[
+InitializeInstance();
+]]></Text>
+            </Constructor>
+            <Method id="29" Name="Main" Linkage="Static" Scope="Class" Access="Public">
+              <Attribute id="30">
+                <Type id="31" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="32" />
+              </Attribute>
+              <Type id="33" Value="System.Void" />
+              <Parameters id="34" />
+              <Implements id="35" Value="" />
+              <Text id="12"><![CDATA[
+Application.EnableVisualStyles();
+Application.DoEvents();
+Application.Run(new BaltieProjectForm());
+]]></Text>
+            </Method>
+            <Method id="36" Name="Animation" Linkage="Override" Scope="Instance" Access="Protected">
+              <Attribute id="37">
+                <Type id="38" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="39" />
+              </Attribute>
+              <Type id="40" Value="System.Void" />
+              <Parameters id="41">
+                <Parameter id="42" Access="In" Name="thisThread">
+                  <Type id="43" Value="IXThread" />
+                </Parameter>
+              </Parameters>
+              <Implements id="44" Value="" />
+              <Text id="45"><![CDATA[
+this.InitializeBalties();
+foreach(Baltie baltie in this.BaltieSpace.Balties) {
+  baltie.SetPosition(0,0,0);
+  baltie.Direction = 0;
+}
+if(System.Diagnostics.Debugger.IsAttached)
+  MainAnimationThread();
+else {  
+  try {
+    MainAnimationThread();
+  }
+  catch(System.Threading.ThreadAbortException) {}
+  catch(SGP.XUtility.XThreadAbortException) {}    
+  catch(Exception e) {
+    new SGP.XRtlExceptionDialog().ShowDialog(e);
+  }
+}
+XSpace.JoinAnimationThreads();
+Application.Exit();
+]]></Text>
+            </Method>
+            <Method id="46" Name="InitializeInstance" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="47">
+                <Type id="48" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="49" />
+              </Attribute>
+              <Type id="50" Value="System.Void" />
+              <Parameters id="51" />
+              <Implements id="52" Value="" />
+              <GeneratedBody id="53" />
+            </Method>
+            <Method id="54" Name="InitializeBalties" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="55">
+                <Type id="56" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="57" />
+              </Attribute>
+              <Type id="58" Value="System.Void" />
+              <Parameters id="59" />
+              <Implements id="60" Value="" />
+              <GeneratedBody id="61" />
+            </Method>
+            <IconMethod id="62" Name="MainAnimationThread" HeaderLocked="true" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="63">
+                <MethodHeader />
+                <Comment Text="---------- Začátek programu ---------" />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="67" Value="System.Void" />
+              <Implements id="68" Value="" />
+              <IconCode id="69">
+                <Indent />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Speed Text="∞" CharacterInst="11" />
+                <EOL />
+                <Indent />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Literal LiteralType="Integer" Text="3" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Show CharacterInst="11" />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Conjure Model="SGP.50.sgpm" CharacterInst="11" />
+                <Conjure Model="SGP.52.sgpm" CharacterInst="11" />
+                <Conjure Model="SGP.74.sgpm" CharacterInst="11" />
+                <Conjure Model="SGP.109.sgpm" CharacterInst="11" />
+                <Conjure Model="SGP.32.sgpm" CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Recede CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <EOL />
+                <Indent />
+                <Brace Direction="End" />
+                <Go CharacterInst="11" />
+                <EOL />
+                <Indent />
+                <Literal LiteralType="Integer" Text="2" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.48.sgpm" CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <TurnRight CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="3" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.48.sgpm" CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <TurnRight CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <Up CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Go Extended="true" CharacterInst="11" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="3" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <TurnRight CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight Extended="true" CharacterInst="11" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="2" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Conjure Model="SGP.41.sgpm" CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.47.sgpm" CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.40.sgpm" CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.44.sgpm" CharacterInst="11" />
+                <EOL />
+                <Indent />
+                <Literal LiteralType="Integer" Text="4" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.44.sgpm" CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.41.sgpm" CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.47.sgpm" CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.40.sgpm" CharacterInst="11" />
+                <EOL />
+                <Indent />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <EOL />
+                <Indent />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.44.sgpm" CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Up CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Go Extended="true" CharacterInst="11" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="2" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.42.sgpm" CharacterInst="11" />
+                <EOL />
+                <Indent />
+                <Literal LiteralType="Integer" Text="6" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <TurnRight CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.42.sgpm" CharacterInst="11" />
+                <EOL />
+                <Indent />
+                <TurnRight CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <EOL />
+                <Indent />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Go CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Conjure Model="SGP.43.sgpm" CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <Go Extended="true" CharacterInst="11" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="5" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <Down Extended="true" CharacterInst="11" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="6" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Brace Direction="End" />
+                <Indent />
+                <EOL />
+                <Indent />
+                <EOL />
+                <Indent />
+                <EOL />
+                <Indent />
+                <Wait Text="∞" />
+              </IconCode>
+            </IconMethod>
+            <DirectCode id="110">
+              <Text id="111"><![CDATA[
+
+]]></Text>
+            </DirectCode>
+          </IconCodeClass>
+          <Import id="112" Name="System" />
+          <Import id="113" Name="System.IO" />
+          <Import id="114" Name="System.Collections" />
+          <Import id="115" Name="System.Drawing" />
+          <Import id="116" Name="System.Threading" />
+          <Import id="117" Name="System.Windows.Forms" />
+          <Import id="118" Name="Microsoft.DirectX" />
+          <Import id="119" Name="Microsoft.DirectX.Direct3D" />
+          <Import id="120" Name="SGP.Baltie" />
+          <Import id="121" Name="SGP.XSpace" />
+          <Import id="122" Name="SGP.XUtility" />
+        </Namespace>
+      </RootNamespace>
+    </ProjectItem>
+    <AssemblyReference id="123" Version="2.0.0.0" Name="System" />
+    <AssemblyReference id="124" Version="2.0.0.0" Name="System.Windows.Forms" />
+    <AssemblyReference id="125" Version="2.0.0.0" Name="System.Drawing" />
+    <AssemblyReference id="126" Version="1.0.2902.0" Name="Microsoft.DirectX" />
+    <AssemblyReference id="127" Version="1.0.2902.0" Name="Microsoft.DirectX.Direct3D" />
+    <AssemblyReference id="128" Version="1.0.2911.0" Name="Microsoft.DirectX.Direct3DX" />
+    <AssemblyReference id="129" Version="1.0.2902.0" Name="Microsoft.DirectX.AudioVideoPlayback" />
+    <AssemblyReference id="130" Version="1.3.4200.28995" Name="SGP.XUtility" />
+    <AssemblyReference id="131" Version="1.3.4200.29049" Name="SGP.DirectX.DirectMusic" />
+    <AssemblyReference id="132" Version="1.3.4200.29081" Name="SGPRTL" />
+  </Project>
+  <Satellites />
+</SGPProject>

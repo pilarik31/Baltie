@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SGPProject SchemaVersion="4.15.4200.29150" ToolId="E06D7E97E05C4BFA9D1D5AA13F8E3DA0" ToolVersion="4.2.4200.29150">
+  <Project id="1" Guid="{fb887955-885a-4351-bf39-b8a495bd06e6}">
+    <Properties id="2" />
+    <Configuration id="3">
+      <Property Name="Name" Value="Debug" />
+      <Property Name="DefineConstants" Value="DEBUG;TRACE" />
+    </Configuration>
+    <Configuration id="4">
+      <Property Name="DebugSymbols" Value="False" />
+      <Property Name="Optimize" Value="True" />
+      <Property Name="Name" Value="Release" />
+      <Property Name="DefineConstants" Value="TRACE" />
+    </Configuration>
+    <ProjectItem id="5">
+      <Properties id="6">
+        <Property Name="BuildAction" Value="Compile" />
+      </Properties>
+      <RootNamespace id="7">
+        <Namespace id="8" Name="BaltieProject">
+          <IconCodeClass id="9" Template="Baltie 3D Application" PlacementName="RELEASE" Inheritance="Normal" ClassType="Class" Name="BaltieProjectForm" Access="Public" IsHiding="false">
+            <Properties id="10" />
+            <Baltie3D id="11" Name="baltie0" />
+            <Baltie3D id="13" Name="baltie1" />
+            <Baltie3D id="14" Name="baltie2" />
+            <Baltie3D id="15" Name="baltie3" />
+            <Baltie3D id="16" Name="baltie4" />
+            <Baltie3D id="17" Name="baltie5" />
+            <Baltie3D id="18" Name="baltie6" />
+            <Baltie3D id="19" Name="baltie7" />
+            <Baltie3D id="20" Name="baltie8" />
+            <Baltie3D id="21" Name="baltie9" />
+            <IconMethodHeader id="22">
+              <BaltieDecl CharacterInst="11" />
+              <EOL />
+            </IconMethodHeader>
+            <BaseType id="25" Value="BaltieForm" />
+            <Constructor id="26" SuperCall="None" Access="Public">
+              <Parameters id="27" />
+              <Text id="28"><![CDATA[
+InitializeInstance();
+]]></Text>
+            </Constructor>
+            <Method id="29" Name="Main" Linkage="Static" Scope="Class" Access="Public">
+              <Attribute id="30">
+                <Type id="31" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="32" />
+              </Attribute>
+              <Type id="33" Value="System.Void" />
+              <Parameters id="34" />
+              <Implements id="35" Value="" />
+              <Text id="12"><![CDATA[
+Application.EnableVisualStyles();
+Application.DoEvents();
+Application.Run(new BaltieProjectForm());
+]]></Text>
+            </Method>
+            <Method id="36" Name="Animation" Linkage="Override" Scope="Instance" Access="Protected">
+              <Attribute id="37">
+                <Type id="38" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="39" />
+              </Attribute>
+              <Type id="40" Value="System.Void" />
+              <Parameters id="41">
+                <Parameter id="42" Access="In" Name="thisThread">
+                  <Type id="43" Value="IXThread" />
+                </Parameter>
+              </Parameters>
+              <Implements id="44" Value="" />
+              <Text id="45"><![CDATA[
+this.InitializeBalties();
+foreach(Baltie baltie in this.BaltieSpace.Balties) {
+  baltie.SetPosition(0,0,0);
+  baltie.Direction = 0;
+}
+if(System.Diagnostics.Debugger.IsAttached)
+  MainAnimationThread();
+else {  
+  try {
+    MainAnimationThread();
+  }
+  catch(System.Threading.ThreadAbortException) {}
+  catch(SGP.XUtility.XThreadAbortException) {}    
+  catch(Exception e) {
+    new SGP.XRtlExceptionDialog().ShowDialog(e);
+  }
+}
+XSpace.JoinAnimationThreads();
+Application.Exit();
+]]></Text>
+            </Method>
+            <Method id="46" Name="InitializeInstance" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="47">
+                <Type id="48" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="49" />
+              </Attribute>
+              <Type id="50" Value="System.Void" />
+              <Parameters id="51" />
+              <Implements id="52" Value="" />
+              <GeneratedBody id="53" />
+            </Method>
+            <Method id="54" Name="InitializeBalties" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="55">
+                <Type id="56" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="57" />
+              </Attribute>
+              <Type id="58" Value="System.Void" />
+              <Parameters id="59" />
+              <Implements id="60" Value="" />
+              <GeneratedBody id="61" />
+            </Method>
+            <IconMethod id="62" Name="MainAnimationThread" HeaderLocked="true" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="63">
+                <MethodHeader />
+                <Comment Text="---------- Začátek programu ---------" />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="67" Value="System.Void" />
+              <Implements id="68" Value="" />
+              <IconCode id="69">
+                <Indent />
+                <Speed Text="∞" CharacterInst="11" />
+                <Show CharacterInst="11" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="strana1" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="kroky" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="strana2" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="kroky" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="strana1" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="kroky" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="strana2" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="kroky" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="prekazka1" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="kroky" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="prekazka2" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="kroky" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="prekazka1" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="kroky" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="prekazka2" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Speed Text="9" CharacterInst="11" />
+                <Wait Text="" />
+                <EOL />
+                <Indent />
+                <Literal LiteralType="Float" Text="∞" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <MethodCall Name="kroky_hop" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Indent />
+                <MethodCall Name="krok_hop2" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Indent />
+                <MethodCall Name="kroky_hop" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <Indent />
+                <Indent />
+                <Indent />
+                <MethodCall Name="krok_hop2" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+                <Indent />
+                <EOL />
+                <Indent />
+                <EOL />
+                <Indent />
+                <Comment Text="------------------ Metody ------------------" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="114" Name="strana1" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="115">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="118" Value="void" />
+              <Implements id="119" Value="" />
+              <IconCode id="120">
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="8" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Go CharacterInst="11" />
+                <Conjure Model="SGP.92.sgpm" CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="130" Name="strana2" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="131">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="134" Value="void" />
+              <Implements id="135" Value="" />
+              <IconCode id="136">
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="12" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Go CharacterInst="11" />
+                <Conjure Model="SGP.92.sgpm" CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="146" Name="prekazka1" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="147">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="150" Value="void" />
+              <Implements id="151" Value="" />
+              <IconCode id="152">
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="4" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Go CharacterInst="11" />
+                <Conjure Model="SGP.34.sgpm" CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="163" Name="kroky" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="164">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="167" Value="void" />
+              <Implements id="168" Value="" />
+              <IconCode id="169">
+                <Indent />
+                <Go CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Recede CharacterInst="11" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="234" Name="prekazka2" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="235">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="238" Value="void" />
+              <Implements id="239" Value="" />
+              <IconCode id="240">
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="6" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Go CharacterInst="11" />
+                <Conjure Model="SGP.34.sgpm" CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="288" Name="kroky_hop" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="289">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="292" Value="void" />
+              <Implements id="293" Value="" />
+              <IconCode id="294">
+                <Indent />
+                <Indent />
+                <Go CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Go Extended="true" CharacterInst="11" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="7" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="333" Name="krok_hop2" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="334">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="337" Value="void" />
+              <Implements id="338" Value="" />
+              <IconCode id="339">
+                <Indent />
+                <Indent />
+                <Go CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Go Extended="true" CharacterInst="11" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="11" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+              </IconCode>
+            </IconMethod>
+            <DirectCode id="177">
+              <Text id="178"><![CDATA[
+
+]]></Text>
+            </DirectCode>
+          </IconCodeClass>
+          <Import id="179" Name="System" />
+          <Import id="180" Name="System.IO" />
+          <Import id="181" Name="System.Collections" />
+          <Import id="182" Name="System.Drawing" />
+          <Import id="183" Name="System.Threading" />
+          <Import id="184" Name="System.Windows.Forms" />
+          <Import id="185" Name="Microsoft.DirectX" />
+          <Import id="186" Name="Microsoft.DirectX.Direct3D" />
+          <Import id="187" Name="SGP.Baltie" />
+          <Import id="188" Name="SGP.XSpace" />
+          <Import id="189" Name="SGP.XUtility" />
+        </Namespace>
+      </RootNamespace>
+    </ProjectItem>
+    <AssemblyReference id="190" Version="2.0.0.0" Name="System" />
+    <AssemblyReference id="191" Version="2.0.0.0" Name="System.Windows.Forms" />
+    <AssemblyReference id="192" Version="2.0.0.0" Name="System.Drawing" />
+    <AssemblyReference id="193" Version="1.0.2902.0" Name="Microsoft.DirectX" />
+    <AssemblyReference id="194" Version="1.0.2902.0" Name="Microsoft.DirectX.Direct3D" />
+    <AssemblyReference id="195" Version="1.0.2911.0" Name="Microsoft.DirectX.Direct3DX" />
+    <AssemblyReference id="196" Version="1.0.2902.0" Name="Microsoft.DirectX.AudioVideoPlayback" />
+    <AssemblyReference id="197" Version="1.3.4200.28995" Name="SGP.XUtility" />
+    <AssemblyReference id="198" Version="1.3.4200.29049" Name="SGP.DirectX.DirectMusic" />
+    <AssemblyReference id="199" Version="1.3.4200.29081" Name="SGPRTL" />
+  </Project>
+  <Satellites />
+</SGPProject>

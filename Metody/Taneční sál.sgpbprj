@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<SGPProject SchemaVersion="4.15.4200.29150" ToolId="E06D7E97E05C4BFA9D1D5AA13F8E3DA0" ToolVersion="4.2.4200.29150">
+  <Project id="1" Guid="{b574308a-8edf-4537-a8f1-7aa38f9e2378}">
+    <Properties id="2" />
+    <Configuration id="3">
+      <Property Name="Name" Value="Debug" />
+      <Property Name="DefineConstants" Value="DEBUG;TRACE" />
+    </Configuration>
+    <Configuration id="4">
+      <Property Name="DebugSymbols" Value="False" />
+      <Property Name="Optimize" Value="True" />
+      <Property Name="Name" Value="Release" />
+      <Property Name="DefineConstants" Value="TRACE" />
+    </Configuration>
+    <ProjectItem id="5">
+      <Properties id="6">
+        <Property Name="BuildAction" Value="Compile" />
+      </Properties>
+      <RootNamespace id="7">
+        <Namespace id="8" Name="BaltieProject">
+          <IconCodeClass id="9" Template="Baltie 3D Application" PlacementName="RELEASE" Inheritance="Normal" ClassType="Class" Name="BaltieProjectForm" Access="Public" IsHiding="false">
+            <Properties id="10" />
+            <Baltie3D id="11" Name="baltie0" />
+            <Baltie3D id="13" Name="baltie1" />
+            <Baltie3D id="14" Name="baltie2" />
+            <Baltie3D id="15" Name="baltie3" />
+            <Baltie3D id="16" Name="baltie4" />
+            <Baltie3D id="17" Name="baltie5" />
+            <Baltie3D id="18" Name="baltie6" />
+            <Baltie3D id="19" Name="baltie7" />
+            <Baltie3D id="20" Name="baltie8" />
+            <Baltie3D id="21" Name="baltie9" />
+            <IconMethodHeader id="22">
+              <BaltieDecl CharacterInst="11" />
+              <EOL />
+            </IconMethodHeader>
+            <BaseType id="25" Value="BaltieForm" />
+            <Constructor id="26" SuperCall="None" Access="Public">
+              <Parameters id="27" />
+              <Text id="28"><![CDATA[
+InitializeInstance();
+]]></Text>
+            </Constructor>
+            <Method id="29" Name="Main" Linkage="Static" Scope="Class" Access="Public">
+              <Attribute id="30">
+                <Type id="31" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="32" />
+              </Attribute>
+              <Type id="33" Value="System.Void" />
+              <Parameters id="34" />
+              <Implements id="35" Value="" />
+              <Text id="12"><![CDATA[
+Application.EnableVisualStyles();
+Application.DoEvents();
+Application.Run(new BaltieProjectForm());
+]]></Text>
+            </Method>
+            <Method id="36" Name="Animation" Linkage="Override" Scope="Instance" Access="Protected">
+              <Attribute id="37">
+                <Type id="38" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="39" />
+              </Attribute>
+              <Type id="40" Value="System.Void" />
+              <Parameters id="41">
+                <Parameter id="42" Access="In" Name="thisThread">
+                  <Type id="43" Value="IXThread" />
+                </Parameter>
+              </Parameters>
+              <Implements id="44" Value="" />
+              <Text id="45"><![CDATA[
+this.InitializeBalties();
+foreach(Baltie baltie in this.BaltieSpace.Balties) {
+  baltie.SetPosition(0,0,0);
+  baltie.Direction = 0;
+}
+if(System.Diagnostics.Debugger.IsAttached)
+  MainAnimationThread();
+else {  
+  try {
+    MainAnimationThread();
+  }
+  catch(System.Threading.ThreadAbortException) {}
+  catch(SGP.XUtility.XThreadAbortException) {}    
+  catch(Exception e) {
+    new SGP.XRtlExceptionDialog().ShowDialog(e);
+  }
+}
+XSpace.JoinAnimationThreads();
+Application.Exit();
+]]></Text>
+            </Method>
+            <Method id="46" Name="InitializeInstance" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="47">
+                <Type id="48" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="49" />
+              </Attribute>
+              <Type id="50" Value="System.Void" />
+              <Parameters id="51" />
+              <Implements id="52" Value="" />
+              <GeneratedBody id="53" />
+            </Method>
+            <Method id="54" Name="InitializeBalties" Linkage="Static" Scope="Instance" Access="Private">
+              <Attribute id="55">
+                <Type id="56" Value="System.Diagnostics.DebuggerHiddenAttribute" />
+                <ParameterList id="57" />
+              </Attribute>
+              <Type id="58" Value="System.Void" />
+              <Parameters id="59" />
+              <Implements id="60" Value="" />
+              <GeneratedBody id="61" />
+            </Method>
+            <IconMethod id="62" Name="MainAnimationThread" HeaderLocked="true" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="63">
+                <MethodHeader />
+                <Comment Text="---------- Začátek programu ---------" />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="67" Value="System.Void" />
+              <Implements id="68" Value="" />
+              <IconCode id="69">
+                <Indent />
+                <Show CharacterInst="11" />
+                <Speed Text="∞" CharacterInst="11" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="Podlahx12" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="Stěnax4" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="palisadax4" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="pohyb" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="Stolyxaxa" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <Indent />
+                <EOL />
+                <Indent />
+                <MethodCall Name="Stolyxa2" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="pohyb" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <Indent />
+                <MethodCall Name="zidlexa2" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <EOL />
+                <EOL />
+                <EOL />
+                <EOL />
+                <Wait Text="" />
+                <EOL />
+                <Comment Text="------------------ Metody ------------------" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="90" Name="Podlaha" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="91">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="94" Value="void" />
+              <Implements id="95" Value="" />
+              <IconCode id="96">
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="12" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Conjure Model="SGP.32.sgpm" CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <Recede Extended="true" CharacterInst="11" />
+                <RoundBracket Direction="Start" />
+                <Literal LiteralType="Integer" Text="12" ImplicitType="Integer" />
+                <RoundBracket Direction="End" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="113" Name="Stěna" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="114">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="117" Value="void" />
+              <Implements id="118" Value="" />
+              <IconCode id="119">
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="12" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.48.sgpm" CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="180" Name="Stěnax4" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="181">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="184" Value="void" />
+              <Implements id="185" Value="" />
+              <IconCode id="186">
+                <Indent />
+                <Go CharacterInst="11" />
+                <Literal LiteralType="Integer" Text="4" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <MethodCall Name="Stěna" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <TurnRight CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="214" Name="Podlahx12" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="215">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="218" Value="void" />
+              <Implements id="219" Value="" />
+              <IconCode id="220">
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="12" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <MethodCall Name="Podlaha" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="242" Name="Stolyxaxa" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="243">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="246" Value="void" />
+              <Implements id="247" Value="" />
+              <IconCode id="248">
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="10" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Conjure Model="SGP.52.sgpm" CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="229" Name="Stolyxa2" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="230">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="233" Value="void" />
+              <Implements id="234" Value="" />
+              <IconCode id="235">
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="4" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Go CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <MethodCall Name="Stolyxaxa" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <Brace Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="253" Name="zidlexa" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="254">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="257" Value="void" />
+              <Implements id="258" Value="" />
+              <IconCode id="259">
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="10" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <Conjure Model="SGP.50.sgpm" CharacterInst="11" />
+                <TurnRight CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="271" Name="zidlexa2" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="272">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="275" Value="void" />
+              <Implements id="276" Value="" />
+              <IconCode id="277">
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="4" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <MethodCall Name="zidlexa" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <TurnRight CharacterInst="11" />
+                <Recede CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="310" Name="palisada" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="311">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="314" Value="void" />
+              <Implements id="315" Value="" />
+              <IconCode id="316">
+                <Indent />
+                <Indent />
+                <Literal LiteralType="Integer" Text="12" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <TurnRight CharacterInst="11" />
+                <Conjure Model="SGP.34.sgpm" CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="331" Name="palisadax4" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="332">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="335" Value="void" />
+              <Implements id="336" Value="" />
+              <IconCode id="337">
+                <Indent />
+                <Up CharacterInst="11" />
+                <Literal LiteralType="Integer" Text="4" ImplicitType="Integer" />
+                <CountedCycle />
+                <Brace Direction="Start" />
+                <MethodCall Name="palisada" />
+                <RoundBracket Direction="Start" />
+                <RoundBracket Direction="End" />
+                <TurnRight CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <Brace Direction="End" />
+                <Down CharacterInst="11" />
+                <EOL />
+              </IconCode>
+            </IconMethod>
+            <IconMethod id="359" Name="pohyb" Linkage="Static" Scope="Instance" Access="Private">
+              <IconMethodHeader id="360">
+                <MethodHeader />
+                <EOL />
+              </IconMethodHeader>
+              <Type id="363" Value="void" />
+              <Implements id="364" Value="" />
+              <IconCode id="365">
+                <Indent />
+                <Indent />
+                <TurnRight CharacterInst="11" />
+                <Go CharacterInst="11" />
+                <TurnLeft CharacterInst="11" />
+              </IconCode>
+            </IconMethod>
+            <DirectCode id="131">
+              <Text id="132"><![CDATA[
+
+]]></Text>
+            </DirectCode>
+          </IconCodeClass>
+          <Import id="133" Name="System" />
+          <Import id="134" Name="System.IO" />
+          <Import id="135" Name="System.Collections" />
+          <Import id="136" Name="System.Drawing" />
+          <Import id="137" Name="System.Threading" />
+          <Import id="138" Name="System.Windows.Forms" />
+          <Import id="139" Name="Microsoft.DirectX" />
+          <Import id="140" Name="Microsoft.DirectX.Direct3D" />
+          <Import id="141" Name="SGP.Baltie" />
+          <Import id="142" Name="SGP.XSpace" />
+          <Import id="143" Name="SGP.XUtility" />
+        </Namespace>
+      </RootNamespace>
+    </ProjectItem>
+    <AssemblyReference id="144" Version="2.0.0.0" Name="System" />
+    <AssemblyReference id="145" Version="2.0.0.0" Name="System.Windows.Forms" />
+    <AssemblyReference id="146" Version="2.0.0.0" Name="System.Drawing" />
+    <AssemblyReference id="147" Version="1.0.2902.0" Name="Microsoft.DirectX" />
+    <AssemblyReference id="148" Version="1.0.2902.0" Name="Microsoft.DirectX.Direct3D" />
+    <AssemblyReference id="149" Version="1.0.2911.0" Name="Microsoft.DirectX.Direct3DX" />
+    <AssemblyReference id="150" Version="1.0.2902.0" Name="Microsoft.DirectX.AudioVideoPlayback" />
+    <AssemblyReference id="151" Version="1.3.4200.28995" Name="SGP.XUtility" />
+    <AssemblyReference id="152" Version="1.3.4200.29049" Name="SGP.DirectX.DirectMusic" />
+    <AssemblyReference id="153" Version="1.3.4200.29081" Name="SGPRTL" />
+  </Project>
+  <Satellites />
+</SGPProject>
